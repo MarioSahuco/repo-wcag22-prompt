@@ -14,8 +14,8 @@ Este repositorio documenta un proceso para diseñar y probar un prompt eficaz qu
 1. Se crearon 3 páginas originales con patrones comunes de problemas: navegación no semántica, formulario sin etiquetas, tabla sin estructura, textos ambiguos y contraste pobre.
 2. Se redactó un prompt maestro con reglas obligatorias de WCAG 2.2 y buenas prácticas ARIA.
 3. Se aplicó el prompt para obtener versiones corregidas en `corrected/`.
-4. Se preparó la validación con múltiples herramientas (WAVE, Axe, Lighthouse, Accessibility Insights, ANDI, ARC Toolkit).
-5. Se dejó una bitácora de validación para documentar iteraciones antes/después.
+4. Se validó el resultado con herramientas automáticas (WAVE, Axe DevTools y Lighthouse).
+5. Se documentaron resultados de antes/después en la bitácora de validación.
 
 ## Problemas detectados y soluciones aplicadas
 - Estructura de encabezados inconsistente -> jerarquía `h1`/`h2` corregida.
@@ -29,32 +29,43 @@ Este repositorio documenta un proceso para diseñar y probar un prompt eficaz qu
 ## Prompt utilizado
 Ver `prompts/prompt-perfecto.md`.
 
-## Validación requerida
-Ejecutar al menos 3 herramientas y adjuntar capturas antes/después:
-1. WAVE
-2. Axe DevTools
-3. Lighthouse
-4. Opcional adicional: Accessibility Insights, ANDI, ARC Toolkit, Access Assistant.
+## Resultados de validación (página landing)
+Se validó la versión original (`originals/index-landing.html`) y la versión corregida (`corrected/index-landing.html`) con WAVE, Axe DevTools y Lighthouse.
 
-## Capturas
-Guardar evidencia en `docs/screenshots/`.
-Luego enlazar aquí con formato Markdown a cada captura de antes y después.
+### WAVE
+- Antes: AIM 7.2/10, 1 error de idioma, 1 error de contraste y 5 alertas.
+- Después: AIM 10/10, 0 errores, 0 errores de contraste y 1 alerta (enlace redundante).
 
-## Ejemplo de enlace
-- `[WAVE antes - landing](docs/screenshots/wave-antes-index-landing.png)`
-- `[WAVE después - landing](docs/screenshots/wave-despues-index-landing.png)`
+### Axe DevTools
+- Antes: 2 problemas graves (`html` sin `lang` y contraste insuficiente).
+- Después: 0 problemas automáticos.
+
+### Lighthouse
+- Antes: 74/100.
+- Después: 100/100.
+
+### Conclusión
+La versión corregida elimina los errores críticos detectados por los validadores automáticos y mejora de forma clara el cumplimiento de accesibilidad conforme a WCAG.
+
+## Evidencias (capturas)
+- [WAVE antes - landing](docs/screenshots/wave-antes-index-landing.png)
+- [WAVE después - landing](docs/screenshots/wave-despues-index-landing.png)
+- [Axe antes - landing](docs/screenshots/axe-antes-index-landing.png)
+- [Axe después - landing](docs/screenshots/axe-despues-index-landing.png)
+- [Lighthouse antes - landing](docs/screenshots/lighthouse-antes-index-landing.png)
+- [Lighthouse después - landing](docs/screenshots/lighthouse-despues-index-landing.png)
 
 ## Estado actual
-- Se generó base completa del ejercicio (original + corregido + prompt + documentación).
-- Falta adjuntar capturas reales de validadores externos para cerrar evidencia final de cumplimiento AA/AAA.
+- Base del ejercicio completa (original + corregido + prompt + documentación).
+- Validación y evidencias completas para `index-landing.html`.
+- Pendiente, si se requiere por rúbrica, replicar evidencias equivalentes para `index-form.html` e `index-table-media.html`.
 
 ## Publicación en GitHub
 Comandos sugeridos:
 
 ```bash
-git init
 git add .
-git commit -m "feat: proyecto WCAG 2.2 con HTML original y corregido"
+git commit -m "docs: agregar resultados y capturas de validación de accesibilidad"
 # Crear repo remoto y subir (GitHub CLI)
 gh repo create repo-wcag22-prompt --public --source=. --remote=origin --push
 ```
