@@ -1,0 +1,157 @@
+﻿:root {
+  --bg: #f7f9fc;
+  --surface: #ffffff;
+  --text: #1b1f24;
+  --muted: #364152;
+  --accent: #005fcc;
+  --accent-strong: #003e88;
+  --focus: #ff8c00;
+  --border: #c8d1dc;
+  --ok: #006b3f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  line-height: 1.55;
+  color: var(--text);
+  background: linear-gradient(120deg, #eef4ff, #f8fbff 45%, #f0f8f3);
+}
+
+.container {
+  width: min(1024px, 92%);
+  margin: 0 auto;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 1000;
+  padding: 0.75rem 1rem;
+  color: #fff;
+  background: #000;
+}
+
+.skip-link:focus {
+  left: 0.5rem;
+  top: 0.5rem;
+}
+
+header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: var(--accent-strong);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.hero,
+.card,
+.table-wrap,
+.form-wrap {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.btn {
+  border: 1px solid var(--accent-strong);
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  border-radius: 0.5rem;
+  padding: 0.65rem 1rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--accent-strong);
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.field {
+  margin: 0.75rem 0;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+}
+
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  border: 1px solid #6b7280;
+  border-radius: 0.4rem;
+  padding: 0.55rem;
+}
+
+.help {
+  font-size: 0.92rem;
+}
+
+.required {
+  color: #b00020;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid #8a98ad;
+  padding: 0.6rem;
+}
+
+th {
+  background: #e6edf7;
+  text-align: left;
+}
+
+footer {
+  margin: 2rem 0;
+  color: var(--muted);
+}

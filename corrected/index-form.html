@@ -1,0 +1,56 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contacto accesible</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+
+  <header>
+    <div class="container">
+      <h1>Formulario de contacto</h1>
+      <nav aria-label="Principal">
+        <ul>
+          <li><a href="index-landing.html">Inicio</a></li>
+          <li><a href="index-form.html" aria-current="page">Contacto</a></li>
+          <li><a href="index-table-media.html">Productos</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido" class="container">
+    <section class="form-wrap" aria-labelledby="titulo-formulario">
+      <h2 id="titulo-formulario">Escríbenos</h2>
+      <p id="ayuda-form" class="help muted">Todos los campos marcados con <span class="required" aria-hidden="true">*</span> son obligatorios.</p>
+
+      <form aria-describedby="ayuda-form" novalidate>
+        <div class="field">
+          <label for="nombre">Nombre completo <span class="required" aria-hidden="true">*</span></label>
+          <input id="nombre" name="nombre" type="text" autocomplete="name" required aria-required="true">
+        </div>
+
+        <div class="field">
+          <label for="correo">Correo electrónico <span class="required" aria-hidden="true">*</span></label>
+          <input id="correo" name="correo" type="email" autocomplete="email" required aria-required="true" aria-describedby="ayuda-correo">
+          <p id="ayuda-correo" class="help">Ejemplo válido: nombre@dominio.com</p>
+        </div>
+
+        <div class="field">
+          <input id="terminos" name="terminos" type="checkbox" required aria-required="true">
+          <label for="terminos">Acepto términos y política de privacidad</label>
+        </div>
+
+        <button class="btn" type="submit">Enviar formulario</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="container">
+    <p>Formulario con etiquetas asociadas, ayudas y foco visible.</p>
+  </footer>
+</body>
+</html>

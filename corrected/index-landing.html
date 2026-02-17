@@ -1,0 +1,45 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tienda Flash - Inicio accesible</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+
+  <header>
+    <div class="container">
+      <h1>Tienda Flash</h1>
+      <nav aria-label="Principal">
+        <ul>
+          <li><a href="index-landing.html" aria-current="page">Inicio</a></li>
+          <li><a href="index-form.html">Contacto</a></li>
+          <li><a href="index-table-media.html">Productos</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido" class="container">
+    <section class="hero" aria-labelledby="titulo-ofertas">
+      <h2 id="titulo-ofertas">Ofertas de la semana</h2>
+      <p class="muted">Navegación totalmente compatible con teclado y lectores de pantalla.</p>
+      <img src="https://via.placeholder.com/900x260"
+           alt="Banner promocional con descuentos de temporada en periféricos y accesorios">
+      <p><a href="index-table-media.html">Ver catálogo completo de ofertas</a></p>
+    </section>
+
+    <section class="card" aria-labelledby="cta-compra">
+      <h2 id="cta-compra">Compra rápida</h2>
+      <p>Todos los controles son visibles en foco y operables sin ratón.</p>
+      <button class="btn" type="button" aria-label="Iniciar proceso de compra">Comprar ahora</button>
+    </section>
+  </main>
+
+  <footer class="container">
+    <p>WCAG 2.2: diseño semántico, contraste y navegación por teclado.</p>
+  </footer>
+</body>
+</html>

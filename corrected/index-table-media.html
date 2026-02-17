@@ -1,0 +1,64 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Productos accesibles</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+
+  <header>
+    <div class="container">
+      <h1>Catálogo de productos</h1>
+      <nav aria-label="Principal">
+        <ul>
+          <li><a href="index-landing.html">Inicio</a></li>
+          <li><a href="index-form.html">Contacto</a></li>
+          <li><a href="index-table-media.html" aria-current="page">Productos</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido" class="container">
+    <section class="table-wrap" aria-labelledby="titulo-tabla">
+      <h2 id="titulo-tabla">Inventario</h2>
+      <table>
+        <caption>Disponibilidad y precio de periféricos</caption>
+        <thead>
+          <tr>
+            <th scope="col">Producto</th>
+            <th scope="col">Precio (EUR)</th>
+            <th scope="col">Stock</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Ratón ergonómico</th>
+            <td>19</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <th scope="row">Teclado mecánico</th>
+            <td>49</td>
+            <td>Sin stock</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card" aria-labelledby="titulo-imagen">
+      <h2 id="titulo-imagen">Detalle visual del producto</h2>
+      <img src="https://via.placeholder.com/200"
+           alt="Fotografía de un teclado mecánico negro con retroiluminación blanca">
+      <p><a href="https://example.com" rel="noopener noreferrer">Más información técnica del fabricante</a></p>
+    </section>
+  </main>
+
+  <footer class="container">
+    <p>Tabla semántica con encabezados de columna y fila.</p>
+  </footer>
+</body>
+</html>
