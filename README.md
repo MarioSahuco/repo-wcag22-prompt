@@ -17,40 +17,109 @@ Este repositorio documenta el diseño y la validación de un prompt eficaz para 
 4. Se ejecutó validación automática comparativa antes/después con WAVE, Axe DevTools y Lighthouse.
 5. Se documentaron resultados y evidencias con capturas.
 
-## Problemas encontrados y soluciones aplicadas
-- Falta de `lang` en `<html>` -> se añadió `lang="es"`.
-- Contraste insuficiente -> se ajustó paleta de colores para AA.
-- Encabezados desordenados -> jerarquía semántica corregida (`h1`, `h2`, etc.).
-- Uso de `div` clicables -> sustitución por elementos nativos (`a`, `button`).
-- Falta de landmarks -> incorporación de `header`, `nav`, `main`, `footer`.
-- Enlaces ambiguos -> textos con propósito claro.
-- Navegación por teclado mejorada -> enlace de salto, foco visible y orden lógico.
+# 📊 Evidencias de Validación de Accesibilidad
 
-## Prompt utilizado
-Ver `prompts/prompt-perfecto.md`.
+Caso documentado: `index-landing.html`  
+Comparativa antes/después tras aplicar el prompt WCAG 2.2.
 
-## Validación de accesibilidad (antes/después)
-Caso documentado: `index-landing.html`.
+---
 
-### WAVE
-- Antes: AIM 7.2/10, 1 error de idioma, 1 error de contraste y 5 alertas.
-- Después: AIM 10/10, 0 errores, 0 errores de contraste y 1 alerta (enlace redundante).
+## 🔎 WAVE
 
-### Axe DevTools
-- Antes: 2 problemas graves (`html` sin `lang` y contraste insuficiente).
-- Después: 0 problemas automáticos.
+### ❌ Antes
 
-### Lighthouse
-- Antes: 74/100.
-- Después: 100/100.
+![WAVE antes](docs/screenshots/wave-antes-index-landing.png)
 
-## Conclusión
-Tras aplicar el prompt, la versión corregida eliminó los errores críticos detectados automáticamente por WAVE, Axe DevTools y Lighthouse, logrando una mejora consistente en cumplimiento de accesibilidad conforme a WCAG.
+**Problemas detectados:**
+- Falta de atributo `lang` en `<html>`.
+- Contraste insuficiente.
+- Jerarquía incorrecta de encabezados.
+- Enlaces ambiguos y falta de landmarks.
 
-## Evidencias (capturas)
-- [WAVE antes - landing](docs/screenshots/wave-antes-index-landing.png)
-- [WAVE después - landing](docs/screenshots/wave-despues-index-landing.png)
-- [Axe antes - landing](docs/screenshots/axe-antes-index-landing.png)
-- [Axe después - landing](docs/screenshots/axe-despues-index-landing.png)
-- [Lighthouse antes - landing](docs/screenshots/lighthouse-antes-index-landing.png)
-- [Lighthouse después - landing](docs/screenshots/lighthouse-despues-index-landing.png)
+**Solución aplicada:**
+- Se añadió `lang="es"`.
+- Ajuste de colores para cumplir WCAG 2.2 nivel AA.
+- Reorganización semántica (`h1`, `h2`, `header`, `nav`, `main`, `footer`).
+- Mejora de textos de enlaces.
+
+---
+
+### ✅ Después
+
+![WAVE después](docs/screenshots/wave-despues-index-landing.png)
+
+**Resultado:**
+- 0 errores.
+- 0 errores de contraste.
+- 1 alerta menor (enlace redundante).
+- AIM Score: 10/10.
+
+---
+
+## 🛠 Axe DevTools
+
+### ❌ Antes
+
+![Axe antes](docs/screenshots/axe-antes-index-landing.png)
+
+**Problemas graves detectados:**
+- Elemento `<html>` sin atributo `lang`.
+- Relación de contraste insuficiente entre texto y fondo.
+
+**Solución aplicada:**
+- Se añadió el atributo de idioma.
+- Se ajustaron colores para cumplir WCAG 2.2 AA.
+
+---
+
+### ✅ Después
+
+![Axe después](docs/screenshots/axe-despues-index-landing.png)
+
+**Resultado:**
+- 0 problemas automáticos detectados.
+- Cumplimiento completo en validación automática.
+
+---
+
+## 🚦 Lighthouse
+
+### ❌ Antes
+
+![Lighthouse antes](docs/screenshots/lighthouse-antes-index-landing.png)
+
+**Puntuación de Accesibilidad:** 74/100  
+
+**Problemas señalados:**
+- Contraste insuficiente.
+- Falta de atributo `lang`.
+- Encabezados fuera de orden.
+- Falta de landmark principal.
+
+---
+
+### ✅ Después
+
+![Lighthouse después](docs/screenshots/lighthouse-despues-index-landing.png)
+
+**Puntuación de Accesibilidad:** 100/100  
+
+**Mejoras logradas:**
+- Estructura semántica correcta.
+- Navegación por teclado optimizada.
+- Contraste conforme a WCAG 2.2 AA.
+- Uso adecuado de landmarks HTML5.
+
+---
+
+## 📌 Conclusión
+
+Tras aplicar el prompt de accesibilidad WCAG 2.2:
+
+- ✅ Se eliminaron todos los errores críticos automáticos.
+- ✅ Se mejoró la estructura semántica y ARIA.
+- ✅ Se alcanzó 100/100 en Lighthouse.
+- ✅ Se logró cumplimiento automático en WAVE y Axe.
+
+El prompt demuestra ser eficaz para corregir HTML conforme a WCAG 2.2 (niveles A y AA).
+
